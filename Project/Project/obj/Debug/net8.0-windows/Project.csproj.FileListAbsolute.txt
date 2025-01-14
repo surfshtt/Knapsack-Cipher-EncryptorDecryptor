@@ -14,3 +14,5 @@ C:\Users\user\Desktop\Knapsack-problem\Project\Project\obj\Debug\net8.0-windows\
 C:\Users\user\Desktop\Knapsack-problem\Project\Project\obj\Debug\net8.0-windows\Project.pdb
 C:\Users\user\Desktop\Knapsack-problem\Project\Project\obj\Debug\net8.0-windows\Project.genruntimeconfig.cache
 C:\Users\user\Desktop\Knapsack-problem\Project\Project\obj\Debug\net8.0-windows\ref\Project.dll
+C:\Users\user\Desktop\Knapsack-problem\Project\Project\obj\Debug\net8.0-windows\Project.Properties.Resources.resources
+C:\Users\user\Desktop\Knapsack-problem\Project\Project\obj\Debug\net8.0-windows\Project.sourcelink.json
