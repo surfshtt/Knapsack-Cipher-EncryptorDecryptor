@@ -1,9 +1,9 @@
-#Knapsack problem
+# Knapsack problem
 
-##About
+## About
 This project contains win app for encryption and decryption messages using the knapsack method.
 
-##Technology stack
+## Technology stack
 C# Winforms
 
 ## Support
