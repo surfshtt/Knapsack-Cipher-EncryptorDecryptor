@@ -204,6 +204,8 @@ namespace Project
                 Encrypted_message.Text += c_i[i].ToString() + " ";
                 stLabel--;
             }
+
+
         }
 
         private int[] toBin(char symb)
@@ -267,25 +269,75 @@ namespace Project
             string c_i_tmp = "";
             for (int i = 0; i < 7; i++)
             {
-                c_i_tmp += c_i[i].ToString();
+                c_i_tmp += c_i[i].ToString() + " ";
             }
             File.WriteAllText("c_i.txt", c_i_tmp);
 
             string opKeyTmp = "";
             for (int i = 0; i < 7; i++)
             {
-                opKeyTmp += x_i[i].ToString();
+                opKeyTmp += x_i[i].ToString() + " ";
             }
             File.WriteAllText("public_key.txt", opKeyTmp);
 
             string clKeyTmp = "";
             for (int i = 0; i < 7; i++)
             {
-                clKeyTmp += k_i[i].ToString();
+                clKeyTmp += k_i[i].ToString() + " ";
             }
             File.WriteAllText("private_key.txt", clKeyTmp);
 
-            MessageBox.Show("Сохранено успешно!");
+            MessageBox.Show("Data has been saved successfully!");
+        }
+
+        private void Upload_button_Click(object sender, EventArgs e)
+        {
+            using (StreamReader sr = new StreamReader("n.txt"))
+            {
+                n = Int32.Parse(sr.ReadLine());
+            }
+
+            using (StreamReader sr = new StreamReader("n1.txt"))
+            {
+                n1 = Int32.Parse(sr.ReadLine());
+            }
+
+            using (StreamReader sr = new StreamReader("m.txt"))
+            {
+                m = Int32.Parse(sr.ReadLine());
+            }
+
+            using (StreamReader sr = new StreamReader("c_i.txt"))
+            {
+                string c_i_str = sr.ReadLine();
+
+                for (int i = 0; i < 7; i++)
+                {
+                    c_i[i] = Int32.Parse(c_i_str.Split(' ')[i]);
+                }
+            }
+
+            using (StreamReader sr = new StreamReader("public_key.txt"))
+            {
+                string public_key_str = sr.ReadLine();
+
+                for (int i = 0; i < 7; i++)
+                {
+                    x_i[i] = Int32.Parse(public_key_str.Split(' ')[i]);
+                }
+            }
+
+            using (StreamReader sr = new StreamReader("private_key.txt"))
+            {
+                string private_key_str = sr.ReadLine();
+
+                for (int i = 0; i < 7; i++)
+                {
+                    k_i[i] = Int32.Parse(private_key_str.Split(' ')[i]);
+                }
+            }
+
+            MessageBox.Show("Data has successfully uploaded!");
         }
     }
 }
