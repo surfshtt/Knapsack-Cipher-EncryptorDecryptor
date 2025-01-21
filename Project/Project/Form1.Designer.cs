@@ -141,11 +141,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19F);
-            label1.Location = new Point(73, 12);
+            label1.Location = new Point(12, 12);
             label1.Name = "label1";
-            label1.Size = new Size(355, 45);
+            label1.Size = new Size(519, 45);
             label1.TabIndex = 1;
-            label1.Text = "Message for encryption";
+            label1.Text = "Message for encryption/decryption";
             // 
             // label2
             // 

@@ -30,8 +30,6 @@ namespace Project
         {
             msg_to_enc = Msg_to_encrypt.Text.ToCharArray();
 
-            n = Int32.Parse(N_field.Text);
-
             string[] tmp_x = Public_key.Text.Split(' ');
             for (int i = 0; i < 7; i++)
             {
@@ -138,7 +136,21 @@ namespace Project
                 return;
             }
 
-            n1 = Int32.Parse(N1_field.Text); //TODO генерация n1
+            Random random = new Random();
+
+            while (true)
+            {
+                n = random.Next(2, 100); 
+
+                if (IsPrime(n) && NOD(n, m) == 1)
+                {
+                    break;
+                }
+            }
+          
+            n1 = Int32.Parse(N1_field.Text);
+            //TODO генерация n1 через эйлера
+            
 
             Symb1.Text = msg_to_enc[0].ToString();
             Symb2.Text = msg_to_enc[1].ToString();
@@ -208,6 +220,27 @@ namespace Project
 
         }
 
+
+        static int NOD(int a, int b)
+        {
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
+        }
+
+        static bool IsPrime(int number)
+        {
+            if (number <= 1) return false;
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0) return false;
+            }
+            return true;
+        }
         private int[] toBin(char symb)
         {
             byte[] bytes = Encoding.GetEncoding("windows-1251").GetBytes(new char[] { symb });
