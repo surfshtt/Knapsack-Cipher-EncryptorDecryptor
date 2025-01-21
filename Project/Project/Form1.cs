@@ -58,18 +58,18 @@ namespace Project
             {
                 k_i[0] = Int32.Parse(Private_key.Text);
 
-                Random random = new Random();
-                int tmpGen = random.Next(k_i[0], k_i[0] + 100);
+                Random rand = new Random();
+                int tmpGen = rand.Next(k_i[0], k_i[0] + 100);
 
                 for (int i = 1; i < 7; i++)
                 {
                     while (sumOfPrevious(k_i, i) > tmpGen)
                     {
-                        tmpGen = random.Next();
+                        tmpGen = rand.Next();
                     }
 
                     k_i[i] = tmpGen;
-                    tmpGen = random.Next();
+                    tmpGen = rand.Next();
                 }
 
                 MessageBox.Show(k_i[0] + " " + k_i[1] + " " + k_i[2] + " " + k_i[3] + " " + k_i[4] + " " + k_i[5] + " " + k_i[6]);
@@ -140,17 +140,19 @@ namespace Project
 
             while (true)
             {
-                n = random.Next(2, 100); 
+                n = random.Next(2, 10000); 
 
                 if (IsPrime(n) && NOD(n, m) == 1)
                 {
                     break;
                 }
             }
-          
-            n1 = Int32.Parse(N1_field.Text);
-            //TODO генерация n1 через эйлера
             
+            n1 = generateN1(n,m);
+
+            N_field.Text = n.ToString();
+            N1_field.Text = n1.ToString();
+
 
             Symb1.Text = msg_to_enc[0].ToString();
             Symb2.Text = msg_to_enc[1].ToString();
@@ -220,6 +222,29 @@ namespace Project
 
         }
 
+        private int generateN1(int n, int m)
+        {
+            // алгоритм Эвклида для нахождения обратного элемента
+            int t = 0, newT = 1;
+            int r = m, newR = n;
+
+            while (newR != 0)
+            {
+                int quotient = r / newR;
+
+                int tempT = t;
+                t = newT;
+                newT = tempT - quotient * newT;
+
+                int tempR = r;
+                r = newR;
+                newR = tempR - quotient * newR;
+            }
+
+            t += m;    
+
+            return t;
+        }
 
         static int NOD(int a, int b)
         {
