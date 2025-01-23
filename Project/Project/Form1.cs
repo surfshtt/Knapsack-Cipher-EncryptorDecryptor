@@ -354,7 +354,7 @@ namespace Project
 
         private void Upload_button_Click(object sender, EventArgs e)
         {
-            if (N_field.Text != "")
+            if (N_field.Text == "")
             {
                 using (StreamReader sr = new StreamReader("n.txt"))
                 {
@@ -363,7 +363,7 @@ namespace Project
                 }
             }
 
-            if (N1_field.Text != "")
+            if (N1_field.Text == "")
             {
                 using (StreamReader sr = new StreamReader("n1.txt"))
                 {
@@ -372,7 +372,7 @@ namespace Project
                 }
             }
 
-            if (M_field.Text != "")
+            if (M_field.Text == "")
             {
                 using (StreamReader sr = new StreamReader("m.txt"))
                 {
@@ -382,7 +382,7 @@ namespace Project
             }
 
 
-            if (Msg_to_encrypt.Text != "")
+            if (Msg_to_encrypt.Text == "")
             {
                 using (StreamReader sr = new StreamReader("c_i.txt"))
                 {
@@ -397,7 +397,7 @@ namespace Project
                 }
             }
 
-            if (Public_key.Text != "")
+            if (Public_key.Text == "")
             {
                 using (StreamReader sr = new StreamReader("public_key.txt"))
                 {
@@ -412,7 +412,7 @@ namespace Project
                 }
             }
 
-            if (Private_key.Text != "")
+            if (Private_key.Text == "")
             {
                 using (StreamReader sr = new StreamReader("private_key.txt"))
                 {
