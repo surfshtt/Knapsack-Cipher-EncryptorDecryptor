@@ -31,13 +31,6 @@ namespace Project
         {
             msg_to_enc = Msg_to_encrypt.Text.ToCharArray();
 
-            string[] tmp_x = Public_key.Text.Split(' ');
-            for (int i = 0; i < 7; i++)
-            {
-                x_i[i] = Int32.Parse(tmp_x[i]);
-            }
-
-
             //k_i
             if (checkBox1.Checked)
             {
@@ -73,7 +66,12 @@ namespace Project
                     tmpGen = rand.Next();
                 }
 
-                MessageBox.Show(k_i[0] + " " + k_i[1] + " " + k_i[2] + " " + k_i[3] + " " + k_i[4] + " " + k_i[5] + " " + k_i[6]);
+                Private_key.Text += " ";
+                for (int i = 0; i < 7; i++)
+                {
+                    Private_key.Text += k_i[i] + " ";
+                }
+
             }
             else if (checkBox3.Checked)
             {
@@ -158,6 +156,11 @@ namespace Project
             N_field.Text = n.ToString();
             N1_field.Text = n1.ToString();
 
+            for (int i = 0; i < 7; i++)
+            {
+                x_i[i] = (k_i[i]*n)%m;
+                Public_key.Text += x_i[i].ToString() + " ";
+            }
 
             Symb1.Text = msg_to_enc[0].ToString();
             Symb2.Text = msg_to_enc[1].ToString();
@@ -421,6 +424,11 @@ namespace Project
 
         private void Decrypt_button_Click(object sender, EventArgs e)
         {
+            int[] c_i_toDecr = new int[7];
+            for (int i = 0; i < 7; i++)
+            {
+                c_i_toDecr[i] = Int32.Parse(Msg_to_encrypt.Text.Split(' ')[i]);
+            }
 
             //M
             m = Int32.Parse(M_field.Text);
@@ -496,6 +504,94 @@ namespace Project
                 return;
             }
 
+            //x_i
+            if (checkBox14.Checked)
+            {
+                string[] tmp_x = Public_key.Text.Split(' ');
+                for (int i = 0; i < 7; i++)
+                {
+                    x_i[i] = Int32.Parse(tmp_x[i]);
+                }
+            }
+            else if (checkBox13.Checked)
+            {
+                using (StreamReader sr = new StreamReader("public_key.txt"))
+                {
+                    string public_key_str = sr.ReadLine();
+
+                    Public_key.Text = public_key_str;
+
+                    for (int i = 0; i < 7; i++)
+                    {
+                        x_i[i] = Int32.Parse(public_key_str.Split(' ')[i]);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("U didnt choose any variant!");
+                return;
+            }
+
+
+            int stLabel = 134;
+            for (int i = 0; i < 7; i++)
+            {
+                Controls["label" + stLabel].Text = c_i_toDecr[i].ToString();
+                stLabel--;
+            }
+
+            int[] a_i = new int[7];
+            stLabel = 127;
+            for (int i = 0; i < 7; i++)
+            {
+                a_i[i] = (c_i_toDecr[i] * n1) % m;
+                Controls["label" + stLabel].Text = a_i[i].ToString();
+                stLabel--;
+            }
+
+            //15-57
+            int[] tmp_a_i = a_i;
+            stLabel = 15;
+            int globalI = 0, labelForBin = 71, labelForLet = 141;
+            for (stLabel = 92; stLabel >= 65; stLabel -= 7) {
+                int[] bin_let = new int[7];
+                for (int i = 0; i < 7; i++)
+                {
+                    if (tmp_a_i[globalI] - x_i[i] >= 0) {
+                        Controls["label" + stLabel].Text = x_i.ToString();
+                        bin_let[i] = 1;
+                        tmp_a_i[globalI] -= x_i[i];
+                    }
+                    else
+                    {
+                        bin_let[i] = 0;
+                    }
+
+                    stLabel += 7;
+                }
+                globalI++;
+
+                for(int k = 0; k < 7; k++)
+                {
+                    Controls["label" + labelForBin].Text += bin_let[k].ToString();
+                }
+                labelForBin--;
+
+                for (int k = 0; k < 7; k++)
+                {
+                    int decVal = 0;
+                    for (int i = 0; i < 7; i++)
+                    {
+                        decVal += bin_let[i] * (1 << (7 - 1 - i));
+                    }
+
+                    byte[] byteArray = new byte[] { (byte)decVal };
+
+                    Controls["label" + labelForLet].Text = Encoding.GetEncoding(1251).GetString(byteArray); ;
+                }
+                labelForLet--;
+            }
         }
 
         static bool CheckN1(int n, int nInv, int m)

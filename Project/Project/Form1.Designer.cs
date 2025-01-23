@@ -131,7 +131,88 @@
             checkBox10 = new CheckBox();
             checkBox11 = new CheckBox();
             checkBox12 = new CheckBox();
+            checkBox13 = new CheckBox();
+            checkBox14 = new CheckBox();
+            label65 = new Label();
+            label66 = new Label();
+            label67 = new Label();
+            label68 = new Label();
+            label69 = new Label();
+            label70 = new Label();
+            label71 = new Label();
+            label72 = new Label();
+            label73 = new Label();
+            label74 = new Label();
+            label75 = new Label();
+            label76 = new Label();
+            label77 = new Label();
+            label78 = new Label();
+            label79 = new Label();
+            label80 = new Label();
+            label81 = new Label();
+            label82 = new Label();
+            label83 = new Label();
+            label84 = new Label();
+            label85 = new Label();
+            label86 = new Label();
+            label87 = new Label();
+            label88 = new Label();
+            label89 = new Label();
+            label90 = new Label();
+            label91 = new Label();
+            label92 = new Label();
+            label93 = new Label();
+            label94 = new Label();
+            label95 = new Label();
+            label96 = new Label();
+            label97 = new Label();
+            label98 = new Label();
+            label99 = new Label();
+            label100 = new Label();
+            label101 = new Label();
+            label102 = new Label();
+            label103 = new Label();
+            label104 = new Label();
+            label105 = new Label();
+            label106 = new Label();
+            label107 = new Label();
+            label108 = new Label();
+            label109 = new Label();
+            label110 = new Label();
+            label111 = new Label();
+            label112 = new Label();
+            label113 = new Label();
+            label114 = new Label();
+            label115 = new Label();
+            label116 = new Label();
+            label117 = new Label();
+            label118 = new Label();
+            label119 = new Label();
+            label120 = new Label();
+            label121 = new Label();
+            label122 = new Label();
+            label123 = new Label();
+            label124 = new Label();
+            label125 = new Label();
+            label126 = new Label();
+            label127 = new Label();
+            label128 = new Label();
+            label129 = new Label();
+            label130 = new Label();
+            label131 = new Label();
+            label132 = new Label();
+            label133 = new Label();
+            label134 = new Label();
+            pictureBox2 = new PictureBox();
+            label135 = new Label();
+            label136 = new Label();
+            label137 = new Label();
+            label138 = new Label();
+            label139 = new Label();
+            label140 = new Label();
+            label141 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // Msg_to_encrypt
@@ -256,7 +337,7 @@
             // 
             Encrypt_buttton.BackColor = Color.PaleGreen;
             Encrypt_buttton.Font = new Font("Segoe UI", 25F);
-            Encrypt_buttton.Location = new Point(1020, 579);
+            Encrypt_buttton.Location = new Point(12, 787);
             Encrypt_buttton.Name = "Encrypt_buttton";
             Encrypt_buttton.Size = new Size(329, 65);
             Encrypt_buttton.TabIndex = 13;
@@ -268,7 +349,7 @@
             // 
             Decrypt_button.BackColor = Color.Tomato;
             Decrypt_button.Font = new Font("Segoe UI", 25F);
-            Decrypt_button.Location = new Point(1020, 657);
+            Decrypt_button.Location = new Point(12, 865);
             Decrypt_button.Name = "Decrypt_button";
             Decrypt_button.Size = new Size(329, 65);
             Decrypt_button.TabIndex = 14;
@@ -1148,11 +1229,891 @@
             checkBox12.Text = "By hands";
             checkBox12.UseVisualStyleBackColor = true;
             // 
+            // checkBox13
+            // 
+            checkBox13.AutoSize = true;
+            checkBox13.Location = new Point(401, 192);
+            checkBox13.Name = "checkBox13";
+            checkBox13.Size = new Size(73, 19);
+            checkBox13.TabIndex = 105;
+            checkBox13.Text = "From file";
+            checkBox13.UseVisualStyleBackColor = true;
+            // 
+            // checkBox14
+            // 
+            checkBox14.AutoSize = true;
+            checkBox14.Location = new Point(400, 167);
+            checkBox14.Name = "checkBox14";
+            checkBox14.Size = new Size(74, 19);
+            checkBox14.TabIndex = 104;
+            checkBox14.Text = "By hands";
+            checkBox14.UseVisualStyleBackColor = true;
+            // 
+            // label65
+            // 
+            label65.AutoSize = true;
+            label65.BorderStyle = BorderStyle.FixedSingle;
+            label65.Font = new Font("Segoe UI", 16F);
+            label65.Location = new Point(1333, 917);
+            label65.Name = "label65";
+            label65.Size = new Size(2, 32);
+            label65.TabIndex = 176;
+            // 
+            // label66
+            // 
+            label66.AutoSize = true;
+            label66.BorderStyle = BorderStyle.FixedSingle;
+            label66.Font = new Font("Segoe UI", 16F);
+            label66.Location = new Point(1333, 881);
+            label66.Name = "label66";
+            label66.Size = new Size(2, 32);
+            label66.TabIndex = 175;
+            // 
+            // label67
+            // 
+            label67.AutoSize = true;
+            label67.BorderStyle = BorderStyle.FixedSingle;
+            label67.Font = new Font("Segoe UI", 16F);
+            label67.Location = new Point(1333, 841);
+            label67.Name = "label67";
+            label67.Size = new Size(2, 32);
+            label67.TabIndex = 174;
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.BorderStyle = BorderStyle.FixedSingle;
+            label68.Font = new Font("Segoe UI", 16F);
+            label68.Location = new Point(1333, 805);
+            label68.Name = "label68";
+            label68.Size = new Size(2, 32);
+            label68.TabIndex = 173;
+            // 
+            // label69
+            // 
+            label69.AutoSize = true;
+            label69.BorderStyle = BorderStyle.FixedSingle;
+            label69.Font = new Font("Segoe UI", 16F);
+            label69.Location = new Point(1333, 767);
+            label69.Name = "label69";
+            label69.Size = new Size(2, 32);
+            label69.TabIndex = 172;
+            // 
+            // label70
+            // 
+            label70.AutoSize = true;
+            label70.BorderStyle = BorderStyle.FixedSingle;
+            label70.Font = new Font("Segoe UI", 16F);
+            label70.Location = new Point(1333, 727);
+            label70.Name = "label70";
+            label70.Size = new Size(2, 32);
+            label70.TabIndex = 171;
+            // 
+            // label71
+            // 
+            label71.AutoSize = true;
+            label71.BorderStyle = BorderStyle.FixedSingle;
+            label71.Font = new Font("Segoe UI", 16F);
+            label71.Location = new Point(1333, 691);
+            label71.Name = "label71";
+            label71.Size = new Size(2, 32);
+            label71.TabIndex = 170;
+            // 
+            // label72
+            // 
+            label72.AutoSize = true;
+            label72.BorderStyle = BorderStyle.FixedSingle;
+            label72.Font = new Font("Segoe UI", 16F);
+            label72.Location = new Point(1178, 917);
+            label72.Name = "label72";
+            label72.Size = new Size(2, 32);
+            label72.TabIndex = 169;
+            // 
+            // label73
+            // 
+            label73.AutoSize = true;
+            label73.BorderStyle = BorderStyle.FixedSingle;
+            label73.Font = new Font("Segoe UI", 16F);
+            label73.Location = new Point(1178, 881);
+            label73.Name = "label73";
+            label73.Size = new Size(2, 32);
+            label73.TabIndex = 168;
+            // 
+            // label74
+            // 
+            label74.AutoSize = true;
+            label74.BorderStyle = BorderStyle.FixedSingle;
+            label74.Font = new Font("Segoe UI", 16F);
+            label74.Location = new Point(1178, 841);
+            label74.Name = "label74";
+            label74.Size = new Size(2, 32);
+            label74.TabIndex = 167;
+            // 
+            // label75
+            // 
+            label75.AutoSize = true;
+            label75.BorderStyle = BorderStyle.FixedSingle;
+            label75.Font = new Font("Segoe UI", 16F);
+            label75.Location = new Point(1178, 805);
+            label75.Name = "label75";
+            label75.Size = new Size(2, 32);
+            label75.TabIndex = 166;
+            // 
+            // label76
+            // 
+            label76.AutoSize = true;
+            label76.BorderStyle = BorderStyle.FixedSingle;
+            label76.Font = new Font("Segoe UI", 16F);
+            label76.Location = new Point(1178, 767);
+            label76.Name = "label76";
+            label76.Size = new Size(2, 32);
+            label76.TabIndex = 165;
+            // 
+            // label77
+            // 
+            label77.AutoSize = true;
+            label77.BorderStyle = BorderStyle.FixedSingle;
+            label77.Font = new Font("Segoe UI", 16F);
+            label77.Location = new Point(1178, 727);
+            label77.Name = "label77";
+            label77.Size = new Size(2, 32);
+            label77.TabIndex = 164;
+            // 
+            // label78
+            // 
+            label78.AutoSize = true;
+            label78.BorderStyle = BorderStyle.FixedSingle;
+            label78.Font = new Font("Segoe UI", 16F);
+            label78.Location = new Point(1178, 691);
+            label78.Name = "label78";
+            label78.Size = new Size(2, 32);
+            label78.TabIndex = 163;
+            // 
+            // label79
+            // 
+            label79.AutoSize = true;
+            label79.BorderStyle = BorderStyle.FixedSingle;
+            label79.Font = new Font("Segoe UI", 16F);
+            label79.Location = new Point(1222, 917);
+            label79.Name = "label79";
+            label79.Size = new Size(2, 32);
+            label79.TabIndex = 162;
+            // 
+            // label80
+            // 
+            label80.AutoSize = true;
+            label80.BorderStyle = BorderStyle.FixedSingle;
+            label80.Font = new Font("Segoe UI", 16F);
+            label80.Location = new Point(1222, 881);
+            label80.Name = "label80";
+            label80.Size = new Size(2, 32);
+            label80.TabIndex = 161;
+            // 
+            // label81
+            // 
+            label81.AutoSize = true;
+            label81.BorderStyle = BorderStyle.FixedSingle;
+            label81.Font = new Font("Segoe UI", 16F);
+            label81.Location = new Point(1222, 841);
+            label81.Name = "label81";
+            label81.Size = new Size(2, 32);
+            label81.TabIndex = 160;
+            // 
+            // label82
+            // 
+            label82.AutoSize = true;
+            label82.BorderStyle = BorderStyle.FixedSingle;
+            label82.Font = new Font("Segoe UI", 16F);
+            label82.Location = new Point(1222, 805);
+            label82.Name = "label82";
+            label82.Size = new Size(2, 32);
+            label82.TabIndex = 159;
+            // 
+            // label83
+            // 
+            label83.AutoSize = true;
+            label83.BorderStyle = BorderStyle.FixedSingle;
+            label83.Font = new Font("Segoe UI", 16F);
+            label83.Location = new Point(1222, 767);
+            label83.Name = "label83";
+            label83.Size = new Size(2, 32);
+            label83.TabIndex = 158;
+            // 
+            // label84
+            // 
+            label84.AutoSize = true;
+            label84.BorderStyle = BorderStyle.FixedSingle;
+            label84.Font = new Font("Segoe UI", 16F);
+            label84.Location = new Point(1222, 727);
+            label84.Name = "label84";
+            label84.Size = new Size(2, 32);
+            label84.TabIndex = 157;
+            // 
+            // label85
+            // 
+            label85.AutoSize = true;
+            label85.BorderStyle = BorderStyle.FixedSingle;
+            label85.Font = new Font("Segoe UI", 16F);
+            label85.Location = new Point(1222, 691);
+            label85.Name = "label85";
+            label85.Size = new Size(2, 32);
+            label85.TabIndex = 156;
+            // 
+            // label86
+            // 
+            label86.AutoSize = true;
+            label86.BorderStyle = BorderStyle.FixedSingle;
+            label86.Font = new Font("Segoe UI", 16F);
+            label86.Location = new Point(1266, 917);
+            label86.Name = "label86";
+            label86.Size = new Size(2, 32);
+            label86.TabIndex = 155;
+            // 
+            // label87
+            // 
+            label87.AutoSize = true;
+            label87.BorderStyle = BorderStyle.FixedSingle;
+            label87.Font = new Font("Segoe UI", 16F);
+            label87.Location = new Point(1266, 881);
+            label87.Name = "label87";
+            label87.Size = new Size(2, 32);
+            label87.TabIndex = 154;
+            // 
+            // label88
+            // 
+            label88.AutoSize = true;
+            label88.BorderStyle = BorderStyle.FixedSingle;
+            label88.Font = new Font("Segoe UI", 16F);
+            label88.Location = new Point(1266, 841);
+            label88.Name = "label88";
+            label88.Size = new Size(2, 32);
+            label88.TabIndex = 153;
+            // 
+            // label89
+            // 
+            label89.AutoSize = true;
+            label89.BorderStyle = BorderStyle.FixedSingle;
+            label89.Font = new Font("Segoe UI", 16F);
+            label89.Location = new Point(1266, 805);
+            label89.Name = "label89";
+            label89.Size = new Size(2, 32);
+            label89.TabIndex = 152;
+            // 
+            // label90
+            // 
+            label90.AutoSize = true;
+            label90.BorderStyle = BorderStyle.FixedSingle;
+            label90.Font = new Font("Segoe UI", 16F);
+            label90.Location = new Point(1266, 767);
+            label90.Name = "label90";
+            label90.Size = new Size(2, 32);
+            label90.TabIndex = 151;
+            // 
+            // label91
+            // 
+            label91.AutoSize = true;
+            label91.BorderStyle = BorderStyle.FixedSingle;
+            label91.Font = new Font("Segoe UI", 16F);
+            label91.Location = new Point(1266, 727);
+            label91.Name = "label91";
+            label91.Size = new Size(2, 32);
+            label91.TabIndex = 150;
+            // 
+            // label92
+            // 
+            label92.AutoSize = true;
+            label92.BorderStyle = BorderStyle.FixedSingle;
+            label92.Font = new Font("Segoe UI", 16F);
+            label92.Location = new Point(1266, 691);
+            label92.Name = "label92";
+            label92.Size = new Size(2, 32);
+            label92.TabIndex = 149;
+            // 
+            // label93
+            // 
+            label93.AutoSize = true;
+            label93.BorderStyle = BorderStyle.FixedSingle;
+            label93.Font = new Font("Segoe UI", 16F);
+            label93.Location = new Point(1081, 917);
+            label93.Name = "label93";
+            label93.Size = new Size(2, 32);
+            label93.TabIndex = 148;
+            // 
+            // label94
+            // 
+            label94.AutoSize = true;
+            label94.BorderStyle = BorderStyle.FixedSingle;
+            label94.Font = new Font("Segoe UI", 16F);
+            label94.Location = new Point(1081, 881);
+            label94.Name = "label94";
+            label94.Size = new Size(2, 32);
+            label94.TabIndex = 147;
+            // 
+            // label95
+            // 
+            label95.AutoSize = true;
+            label95.BorderStyle = BorderStyle.FixedSingle;
+            label95.Font = new Font("Segoe UI", 16F);
+            label95.Location = new Point(1081, 841);
+            label95.Name = "label95";
+            label95.Size = new Size(2, 32);
+            label95.TabIndex = 146;
+            // 
+            // label96
+            // 
+            label96.AutoSize = true;
+            label96.BorderStyle = BorderStyle.FixedSingle;
+            label96.Font = new Font("Segoe UI", 16F);
+            label96.Location = new Point(1081, 805);
+            label96.Name = "label96";
+            label96.Size = new Size(2, 32);
+            label96.TabIndex = 145;
+            // 
+            // label97
+            // 
+            label97.AutoSize = true;
+            label97.BorderStyle = BorderStyle.FixedSingle;
+            label97.Font = new Font("Segoe UI", 16F);
+            label97.Location = new Point(1081, 767);
+            label97.Name = "label97";
+            label97.Size = new Size(2, 32);
+            label97.TabIndex = 144;
+            // 
+            // label98
+            // 
+            label98.AutoSize = true;
+            label98.BorderStyle = BorderStyle.FixedSingle;
+            label98.Font = new Font("Segoe UI", 16F);
+            label98.Location = new Point(1081, 727);
+            label98.Name = "label98";
+            label98.Size = new Size(2, 32);
+            label98.TabIndex = 143;
+            // 
+            // label99
+            // 
+            label99.AutoSize = true;
+            label99.BorderStyle = BorderStyle.FixedSingle;
+            label99.Font = new Font("Segoe UI", 16F);
+            label99.Location = new Point(1081, 691);
+            label99.Name = "label99";
+            label99.Size = new Size(2, 32);
+            label99.TabIndex = 142;
+            // 
+            // label100
+            // 
+            label100.AutoSize = true;
+            label100.BorderStyle = BorderStyle.FixedSingle;
+            label100.Font = new Font("Segoe UI", 16F);
+            label100.Location = new Point(1130, 917);
+            label100.Name = "label100";
+            label100.Size = new Size(2, 32);
+            label100.TabIndex = 141;
+            // 
+            // label101
+            // 
+            label101.AutoSize = true;
+            label101.BorderStyle = BorderStyle.FixedSingle;
+            label101.Font = new Font("Segoe UI", 16F);
+            label101.Location = new Point(1130, 881);
+            label101.Name = "label101";
+            label101.Size = new Size(2, 32);
+            label101.TabIndex = 140;
+            // 
+            // label102
+            // 
+            label102.AutoSize = true;
+            label102.BorderStyle = BorderStyle.FixedSingle;
+            label102.Font = new Font("Segoe UI", 16F);
+            label102.Location = new Point(1130, 841);
+            label102.Name = "label102";
+            label102.Size = new Size(2, 32);
+            label102.TabIndex = 139;
+            // 
+            // label103
+            // 
+            label103.AutoSize = true;
+            label103.BorderStyle = BorderStyle.FixedSingle;
+            label103.Font = new Font("Segoe UI", 16F);
+            label103.Location = new Point(1130, 805);
+            label103.Name = "label103";
+            label103.Size = new Size(2, 32);
+            label103.TabIndex = 138;
+            // 
+            // label104
+            // 
+            label104.AutoSize = true;
+            label104.BorderStyle = BorderStyle.FixedSingle;
+            label104.Font = new Font("Segoe UI", 16F);
+            label104.Location = new Point(1130, 767);
+            label104.Name = "label104";
+            label104.Size = new Size(2, 32);
+            label104.TabIndex = 137;
+            // 
+            // label105
+            // 
+            label105.AutoSize = true;
+            label105.BorderStyle = BorderStyle.FixedSingle;
+            label105.Font = new Font("Segoe UI", 16F);
+            label105.Location = new Point(1130, 727);
+            label105.Name = "label105";
+            label105.Size = new Size(2, 32);
+            label105.TabIndex = 136;
+            // 
+            // label106
+            // 
+            label106.AutoSize = true;
+            label106.BorderStyle = BorderStyle.FixedSingle;
+            label106.Font = new Font("Segoe UI", 16F);
+            label106.Location = new Point(1130, 691);
+            label106.Name = "label106";
+            label106.Size = new Size(2, 32);
+            label106.TabIndex = 135;
+            // 
+            // label107
+            // 
+            label107.AutoSize = true;
+            label107.BorderStyle = BorderStyle.FixedSingle;
+            label107.Font = new Font("Segoe UI", 16F);
+            label107.Location = new Point(1034, 917);
+            label107.Name = "label107";
+            label107.Size = new Size(2, 32);
+            label107.TabIndex = 134;
+            // 
+            // label108
+            // 
+            label108.AutoSize = true;
+            label108.BorderStyle = BorderStyle.FixedSingle;
+            label108.Font = new Font("Segoe UI", 16F);
+            label108.Location = new Point(1034, 881);
+            label108.Name = "label108";
+            label108.Size = new Size(2, 32);
+            label108.TabIndex = 133;
+            // 
+            // label109
+            // 
+            label109.AutoSize = true;
+            label109.BorderStyle = BorderStyle.FixedSingle;
+            label109.Font = new Font("Segoe UI", 16F);
+            label109.Location = new Point(1034, 841);
+            label109.Name = "label109";
+            label109.Size = new Size(2, 32);
+            label109.TabIndex = 132;
+            // 
+            // label110
+            // 
+            label110.AutoSize = true;
+            label110.BorderStyle = BorderStyle.FixedSingle;
+            label110.Font = new Font("Segoe UI", 16F);
+            label110.Location = new Point(1034, 805);
+            label110.Name = "label110";
+            label110.Size = new Size(2, 32);
+            label110.TabIndex = 131;
+            // 
+            // label111
+            // 
+            label111.AutoSize = true;
+            label111.BorderStyle = BorderStyle.FixedSingle;
+            label111.Font = new Font("Segoe UI", 16F);
+            label111.Location = new Point(1034, 767);
+            label111.Name = "label111";
+            label111.Size = new Size(2, 32);
+            label111.TabIndex = 130;
+            // 
+            // label112
+            // 
+            label112.AutoSize = true;
+            label112.BorderStyle = BorderStyle.FixedSingle;
+            label112.Font = new Font("Segoe UI", 16F);
+            label112.Location = new Point(1034, 727);
+            label112.Name = "label112";
+            label112.Size = new Size(2, 32);
+            label112.TabIndex = 129;
+            // 
+            // label113
+            // 
+            label113.AutoSize = true;
+            label113.BorderStyle = BorderStyle.FixedSingle;
+            label113.Font = new Font("Segoe UI", 16F);
+            label113.Location = new Point(1034, 691);
+            label113.Name = "label113";
+            label113.Size = new Size(2, 32);
+            label113.TabIndex = 128;
+            // 
+            // label114
+            // 
+            label114.AutoSize = true;
+            label114.BorderStyle = BorderStyle.FixedSingle;
+            label114.Font = new Font("Segoe UI", 16F);
+            label114.Location = new Point(989, 917);
+            label114.Name = "label114";
+            label114.Size = new Size(2, 32);
+            label114.TabIndex = 127;
+            // 
+            // label115
+            // 
+            label115.AutoSize = true;
+            label115.BorderStyle = BorderStyle.FixedSingle;
+            label115.Font = new Font("Segoe UI", 16F);
+            label115.Location = new Point(989, 881);
+            label115.Name = "label115";
+            label115.Size = new Size(2, 32);
+            label115.TabIndex = 126;
+            // 
+            // label116
+            // 
+            label116.AutoSize = true;
+            label116.BorderStyle = BorderStyle.FixedSingle;
+            label116.Font = new Font("Segoe UI", 16F);
+            label116.Location = new Point(989, 841);
+            label116.Name = "label116";
+            label116.Size = new Size(2, 32);
+            label116.TabIndex = 125;
+            // 
+            // label117
+            // 
+            label117.AutoSize = true;
+            label117.BorderStyle = BorderStyle.FixedSingle;
+            label117.Font = new Font("Segoe UI", 16F);
+            label117.Location = new Point(989, 805);
+            label117.Name = "label117";
+            label117.Size = new Size(2, 32);
+            label117.TabIndex = 124;
+            // 
+            // label118
+            // 
+            label118.AutoSize = true;
+            label118.BorderStyle = BorderStyle.FixedSingle;
+            label118.Font = new Font("Segoe UI", 16F);
+            label118.Location = new Point(989, 767);
+            label118.Name = "label118";
+            label118.Size = new Size(2, 32);
+            label118.TabIndex = 123;
+            // 
+            // label119
+            // 
+            label119.AutoSize = true;
+            label119.BorderStyle = BorderStyle.FixedSingle;
+            label119.Font = new Font("Segoe UI", 16F);
+            label119.Location = new Point(989, 727);
+            label119.Name = "label119";
+            label119.Size = new Size(2, 32);
+            label119.TabIndex = 122;
+            // 
+            // label120
+            // 
+            label120.AutoSize = true;
+            label120.BorderStyle = BorderStyle.FixedSingle;
+            label120.Font = new Font("Segoe UI", 16F);
+            label120.Location = new Point(989, 691);
+            label120.Name = "label120";
+            label120.Size = new Size(2, 32);
+            label120.TabIndex = 121;
+            // 
+            // label121
+            // 
+            label121.AutoSize = true;
+            label121.BorderStyle = BorderStyle.FixedSingle;
+            label121.Font = new Font("Segoe UI", 16F);
+            label121.Location = new Point(832, 921);
+            label121.Name = "label121";
+            label121.Size = new Size(2, 32);
+            label121.TabIndex = 120;
+            // 
+            // label122
+            // 
+            label122.AutoSize = true;
+            label122.BorderStyle = BorderStyle.FixedSingle;
+            label122.Font = new Font("Segoe UI", 16F);
+            label122.Location = new Point(832, 885);
+            label122.Name = "label122";
+            label122.Size = new Size(2, 32);
+            label122.TabIndex = 119;
+            // 
+            // label123
+            // 
+            label123.AutoSize = true;
+            label123.BorderStyle = BorderStyle.FixedSingle;
+            label123.Font = new Font("Segoe UI", 16F);
+            label123.Location = new Point(832, 845);
+            label123.Name = "label123";
+            label123.Size = new Size(2, 32);
+            label123.TabIndex = 118;
+            // 
+            // label124
+            // 
+            label124.AutoSize = true;
+            label124.BorderStyle = BorderStyle.FixedSingle;
+            label124.Font = new Font("Segoe UI", 16F);
+            label124.Location = new Point(832, 809);
+            label124.Name = "label124";
+            label124.Size = new Size(2, 32);
+            label124.TabIndex = 117;
+            // 
+            // label125
+            // 
+            label125.AutoSize = true;
+            label125.BorderStyle = BorderStyle.FixedSingle;
+            label125.Font = new Font("Segoe UI", 16F);
+            label125.Location = new Point(832, 771);
+            label125.Name = "label125";
+            label125.Size = new Size(2, 32);
+            label125.TabIndex = 116;
+            // 
+            // label126
+            // 
+            label126.AutoSize = true;
+            label126.BorderStyle = BorderStyle.FixedSingle;
+            label126.Font = new Font("Segoe UI", 16F);
+            label126.Location = new Point(832, 731);
+            label126.Name = "label126";
+            label126.Size = new Size(2, 32);
+            label126.TabIndex = 115;
+            // 
+            // label127
+            // 
+            label127.AutoSize = true;
+            label127.BorderStyle = BorderStyle.FixedSingle;
+            label127.Font = new Font("Segoe UI", 16F);
+            label127.Location = new Point(832, 695);
+            label127.Name = "label127";
+            label127.Size = new Size(2, 32);
+            label127.TabIndex = 114;
+            // 
+            // label128
+            // 
+            label128.AutoSize = true;
+            label128.BorderStyle = BorderStyle.FixedSingle;
+            label128.Font = new Font("Segoe UI", 16F);
+            label128.Location = new Point(580, 917);
+            label128.Name = "label128";
+            label128.Size = new Size(2, 32);
+            label128.TabIndex = 113;
+            // 
+            // label129
+            // 
+            label129.AutoSize = true;
+            label129.BorderStyle = BorderStyle.FixedSingle;
+            label129.Font = new Font("Segoe UI", 16F);
+            label129.Location = new Point(580, 881);
+            label129.Name = "label129";
+            label129.Size = new Size(2, 32);
+            label129.TabIndex = 112;
+            // 
+            // label130
+            // 
+            label130.AutoSize = true;
+            label130.BorderStyle = BorderStyle.FixedSingle;
+            label130.Font = new Font("Segoe UI", 16F);
+            label130.Location = new Point(580, 841);
+            label130.Name = "label130";
+            label130.Size = new Size(2, 32);
+            label130.TabIndex = 111;
+            // 
+            // label131
+            // 
+            label131.AutoSize = true;
+            label131.BorderStyle = BorderStyle.FixedSingle;
+            label131.Font = new Font("Segoe UI", 16F);
+            label131.Location = new Point(580, 805);
+            label131.Name = "label131";
+            label131.Size = new Size(2, 32);
+            label131.TabIndex = 110;
+            // 
+            // label132
+            // 
+            label132.AutoSize = true;
+            label132.BorderStyle = BorderStyle.FixedSingle;
+            label132.Font = new Font("Segoe UI", 16F);
+            label132.Location = new Point(580, 767);
+            label132.Name = "label132";
+            label132.Size = new Size(2, 32);
+            label132.TabIndex = 109;
+            // 
+            // label133
+            // 
+            label133.AutoSize = true;
+            label133.BorderStyle = BorderStyle.FixedSingle;
+            label133.Font = new Font("Segoe UI", 16F);
+            label133.Location = new Point(580, 727);
+            label133.Name = "label133";
+            label133.Size = new Size(2, 32);
+            label133.TabIndex = 108;
+            // 
+            // label134
+            // 
+            label134.AutoSize = true;
+            label134.BorderStyle = BorderStyle.FixedSingle;
+            label134.Font = new Font("Segoe UI", 16F);
+            label134.Location = new Point(580, 691);
+            label134.Name = "label134";
+            label134.Size = new Size(2, 32);
+            label134.TabIndex = 107;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(489, 579);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(1152, 97);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 106;
+            pictureBox2.TabStop = false;
+            // 
+            // label135
+            // 
+            label135.AutoSize = true;
+            label135.BorderStyle = BorderStyle.FixedSingle;
+            label135.Font = new Font("Segoe UI", 16F);
+            label135.Location = new Point(1557, 921);
+            label135.Name = "label135";
+            label135.Size = new Size(2, 32);
+            label135.TabIndex = 183;
+            // 
+            // label136
+            // 
+            label136.AutoSize = true;
+            label136.BorderStyle = BorderStyle.FixedSingle;
+            label136.Font = new Font("Segoe UI", 16F);
+            label136.Location = new Point(1557, 885);
+            label136.Name = "label136";
+            label136.Size = new Size(2, 32);
+            label136.TabIndex = 182;
+            // 
+            // label137
+            // 
+            label137.AutoSize = true;
+            label137.BorderStyle = BorderStyle.FixedSingle;
+            label137.Font = new Font("Segoe UI", 16F);
+            label137.Location = new Point(1557, 845);
+            label137.Name = "label137";
+            label137.Size = new Size(2, 32);
+            label137.TabIndex = 181;
+            // 
+            // label138
+            // 
+            label138.AutoSize = true;
+            label138.BorderStyle = BorderStyle.FixedSingle;
+            label138.Font = new Font("Segoe UI", 16F);
+            label138.Location = new Point(1557, 809);
+            label138.Name = "label138";
+            label138.Size = new Size(2, 32);
+            label138.TabIndex = 180;
+            // 
+            // label139
+            // 
+            label139.AutoSize = true;
+            label139.BorderStyle = BorderStyle.FixedSingle;
+            label139.Font = new Font("Segoe UI", 16F);
+            label139.Location = new Point(1557, 771);
+            label139.Name = "label139";
+            label139.Size = new Size(2, 32);
+            label139.TabIndex = 179;
+            // 
+            // label140
+            // 
+            label140.AutoSize = true;
+            label140.BorderStyle = BorderStyle.FixedSingle;
+            label140.Font = new Font("Segoe UI", 16F);
+            label140.Location = new Point(1557, 731);
+            label140.Name = "label140";
+            label140.Size = new Size(2, 32);
+            label140.TabIndex = 178;
+            // 
+            // label141
+            // 
+            label141.AutoSize = true;
+            label141.BorderStyle = BorderStyle.FixedSingle;
+            label141.Font = new Font("Segoe UI", 16F);
+            label141.Location = new Point(1557, 695);
+            label141.Name = "label141";
+            label141.Size = new Size(2, 32);
+            label141.TabIndex = 177;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1382, 732);
+            ClientSize = new Size(1666, 970);
+            Controls.Add(label135);
+            Controls.Add(label136);
+            Controls.Add(label137);
+            Controls.Add(label138);
+            Controls.Add(label139);
+            Controls.Add(label140);
+            Controls.Add(label141);
+            Controls.Add(label65);
+            Controls.Add(label66);
+            Controls.Add(label67);
+            Controls.Add(label68);
+            Controls.Add(label69);
+            Controls.Add(label70);
+            Controls.Add(label71);
+            Controls.Add(label72);
+            Controls.Add(label73);
+            Controls.Add(label74);
+            Controls.Add(label75);
+            Controls.Add(label76);
+            Controls.Add(label77);
+            Controls.Add(label78);
+            Controls.Add(label79);
+            Controls.Add(label80);
+            Controls.Add(label81);
+            Controls.Add(label82);
+            Controls.Add(label83);
+            Controls.Add(label84);
+            Controls.Add(label85);
+            Controls.Add(label86);
+            Controls.Add(label87);
+            Controls.Add(label88);
+            Controls.Add(label89);
+            Controls.Add(label90);
+            Controls.Add(label91);
+            Controls.Add(label92);
+            Controls.Add(label93);
+            Controls.Add(label94);
+            Controls.Add(label95);
+            Controls.Add(label96);
+            Controls.Add(label97);
+            Controls.Add(label98);
+            Controls.Add(label99);
+            Controls.Add(label100);
+            Controls.Add(label101);
+            Controls.Add(label102);
+            Controls.Add(label103);
+            Controls.Add(label104);
+            Controls.Add(label105);
+            Controls.Add(label106);
+            Controls.Add(label107);
+            Controls.Add(label108);
+            Controls.Add(label109);
+            Controls.Add(label110);
+            Controls.Add(label111);
+            Controls.Add(label112);
+            Controls.Add(label113);
+            Controls.Add(label114);
+            Controls.Add(label115);
+            Controls.Add(label116);
+            Controls.Add(label117);
+            Controls.Add(label118);
+            Controls.Add(label119);
+            Controls.Add(label120);
+            Controls.Add(label121);
+            Controls.Add(label122);
+            Controls.Add(label123);
+            Controls.Add(label124);
+            Controls.Add(label125);
+            Controls.Add(label126);
+            Controls.Add(label127);
+            Controls.Add(label128);
+            Controls.Add(label129);
+            Controls.Add(label130);
+            Controls.Add(label131);
+            Controls.Add(label132);
+            Controls.Add(label133);
+            Controls.Add(label134);
+            Controls.Add(pictureBox2);
+            Controls.Add(checkBox13);
+            Controls.Add(checkBox14);
             Controls.Add(checkBox10);
             Controls.Add(checkBox11);
             Controls.Add(checkBox12);
@@ -1258,6 +2219,7 @@
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1366,5 +2328,85 @@
         private CheckBox checkBox10;
         private CheckBox checkBox11;
         private CheckBox checkBox12;
+        private CheckBox checkBox13;
+        private CheckBox checkBox14;
+        private Label label65;
+        private Label label66;
+        private Label label67;
+        private Label label68;
+        private Label label69;
+        private Label label70;
+        private Label label71;
+        private Label label72;
+        private Label label73;
+        private Label label74;
+        private Label label75;
+        private Label label76;
+        private Label label77;
+        private Label label78;
+        private Label label79;
+        private Label label80;
+        private Label label81;
+        private Label label82;
+        private Label label83;
+        private Label label84;
+        private Label label85;
+        private Label label86;
+        private Label label87;
+        private Label label88;
+        private Label label89;
+        private Label label90;
+        private Label label91;
+        private Label label92;
+        private Label label93;
+        private Label label94;
+        private Label label95;
+        private Label label96;
+        private Label label97;
+        private Label label98;
+        private Label label99;
+        private Label label100;
+        private Label label101;
+        private Label label102;
+        private Label label103;
+        private Label label104;
+        private Label label105;
+        private Label label106;
+        private Label label107;
+        private Label label108;
+        private Label label109;
+        private Label label110;
+        private Label label111;
+        private Label label112;
+        private Label label113;
+        private Label label114;
+        private Label label115;
+        private Label label116;
+        private Label label117;
+        private Label label118;
+        private Label label119;
+        private Label label120;
+        private Label label121;
+        private Label label122;
+        private Label label123;
+        private Label label124;
+        private Label label125;
+        private Label label126;
+        private Label label127;
+        private Label label128;
+        private Label label129;
+        private Label label130;
+        private Label label131;
+        private Label label132;
+        private Label label133;
+        private Label label134;
+        private PictureBox pictureBox2;
+        private Label label135;
+        private Label label136;
+        private Label label137;
+        private Label label138;
+        private Label label139;
+        private Label label140;
+        private Label label141;
     }
 }
