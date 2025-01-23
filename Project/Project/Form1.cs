@@ -354,70 +354,85 @@ namespace Project
 
         private void Upload_button_Click(object sender, EventArgs e)
         {
-            uplData();
+            if (N_field.Text != "")
+            {
+                using (StreamReader sr = new StreamReader("n.txt"))
+                {
+                    n = Int32.Parse(sr.ReadLine());
+                    N_field.Text = n.ToString();
+                }
+            }
+
+            if (N1_field.Text != "")
+            {
+                using (StreamReader sr = new StreamReader("n1.txt"))
+                {
+                    n1 = Int32.Parse(sr.ReadLine());
+                    N1_field.Text = n1.ToString();
+                }
+            }
+
+            if (M_field.Text != "")
+            {
+                using (StreamReader sr = new StreamReader("m.txt"))
+                {
+                    m = Int32.Parse(sr.ReadLine());
+                    M_field.Text = m.ToString();
+                }
+            }
+
+
+            if (Msg_to_encrypt.Text != "")
+            {
+                using (StreamReader sr = new StreamReader("c_i.txt"))
+                {
+                    string c_i_str = sr.ReadLine();
+
+                    Msg_to_encrypt.Text = c_i_str;
+
+                    for (int i = 0; i < 7; i++)
+                    {
+                        c_i[i] = Int32.Parse(c_i_str.Split(' ')[i]);
+                    }
+                }
+            }
+
+            if (Public_key.Text != "")
+            {
+                using (StreamReader sr = new StreamReader("public_key.txt"))
+                {
+                    string public_key_str = sr.ReadLine();
+
+                    Public_key.Text = public_key_str;
+
+                    for (int i = 0; i < 7; i++)
+                    {
+                        x_i[i] = Int32.Parse(public_key_str.Split(' ')[i]);
+                    }
+                }
+            }
+
+            if (Private_key.Text != "")
+            {
+                using (StreamReader sr = new StreamReader("private_key.txt"))
+                {
+                    string private_key_str = sr.ReadLine();
+
+                    Private_key.Text = private_key_str;
+
+                    for (int i = 0; i < 7; i++)
+                    {
+                        k_i[i] = Int32.Parse(private_key_str.Split(' ')[i]);
+                    }
+                }
+            }
+
             MessageBox.Show("Data has successfully uploaded!");
-        }
-
-        void uplData()
-        {
-            using (StreamReader sr = new StreamReader("n.txt"))
-            {
-                n = Int32.Parse(sr.ReadLine());
-                N_field.Text = n.ToString();
-            }
-
-            using (StreamReader sr = new StreamReader("n1.txt"))
-            {
-                n1 = Int32.Parse(sr.ReadLine());
-                N1_field.Text = n1.ToString();
-            }
-
-            using (StreamReader sr = new StreamReader("m.txt"))
-            {
-                m = Int32.Parse(sr.ReadLine());
-                M_field.Text = m.ToString();
-            }
-
-            using (StreamReader sr = new StreamReader("c_i.txt"))
-            {
-                string c_i_str = sr.ReadLine();
-
-                Msg_to_encrypt.Text = c_i_str;
-
-                for (int i = 0; i < 7; i++)
-                {
-                    c_i[i] = Int32.Parse(c_i_str.Split(' ')[i]);
-                }
-            }
-
-            using (StreamReader sr = new StreamReader("public_key.txt"))
-            {
-                string public_key_str = sr.ReadLine();
-
-                Public_key.Text = public_key_str;
-
-                for (int i = 0; i < 7; i++)
-                {
-                    x_i[i] = Int32.Parse(public_key_str.Split(' ')[i]);
-                }
-            }
-
-            using (StreamReader sr = new StreamReader("private_key.txt"))
-            {
-                string private_key_str = sr.ReadLine();
-
-                Private_key.Text = private_key_str;
-
-                for (int i = 0; i < 7; i++)
-                {
-                    k_i[i] = Int32.Parse(private_key_str.Split(' ')[i]);
-                }
-            }
         }
 
         private void Decrypt_button_Click(object sender, EventArgs e)
         {
-            uplData();
+            
 
 
         }
