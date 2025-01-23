@@ -125,6 +125,12 @@
             label62 = new Label();
             label63 = new Label();
             label64 = new Label();
+            checkBox7 = new CheckBox();
+            checkBox8 = new CheckBox();
+            checkBox9 = new CheckBox();
+            checkBox10 = new CheckBox();
+            checkBox11 = new CheckBox();
+            checkBox12 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -186,7 +192,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 19F);
-            label4.Location = new Point(32, 351);
+            label4.Location = new Point(49, 351);
             label4.Name = "label4";
             label4.Size = new Size(30, 36);
             label4.TabIndex = 7;
@@ -197,14 +203,14 @@
             N_field.Font = new Font("Segoe UI", 25F);
             N_field.Location = new Point(10, 390);
             N_field.Name = "N_field";
-            N_field.Size = new Size(110, 52);
+            N_field.Size = new Size(260, 52);
             N_field.TabIndex = 6;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 19F);
-            label5.Location = new Point(171, 351);
+            label5.Location = new Point(55, 463);
             label5.Name = "label5";
             label5.Size = new Size(30, 36);
             label5.TabIndex = 9;
@@ -213,16 +219,16 @@
             // N1_field
             // 
             N1_field.Font = new Font("Segoe UI", 25F);
-            N1_field.Location = new Point(126, 390);
+            N1_field.Location = new Point(10, 502);
             N1_field.Name = "N1_field";
-            N1_field.Size = new Size(122, 52);
+            N1_field.Size = new Size(269, 52);
             N1_field.TabIndex = 8;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 19F);
-            label6.Location = new Point(307, 351);
+            label6.Location = new Point(49, 579);
             label6.Name = "label6";
             label6.Size = new Size(37, 36);
             label6.TabIndex = 11;
@@ -231,16 +237,16 @@
             // M_field
             // 
             M_field.Font = new Font("Segoe UI", 25F);
-            M_field.Location = new Point(254, 390);
+            M_field.Location = new Point(12, 616);
             M_field.Name = "M_field";
-            M_field.Size = new Size(119, 52);
+            M_field.Size = new Size(267, 52);
             M_field.TabIndex = 10;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10F);
-            label7.Location = new Point(190, 351);
+            label7.Location = new Point(74, 463);
             label7.Name = "label7";
             label7.Size = new Size(23, 19);
             label7.TabIndex = 12;
@@ -250,7 +256,7 @@
             // 
             Encrypt_buttton.BackColor = Color.PaleGreen;
             Encrypt_buttton.Font = new Font("Segoe UI", 25F);
-            Encrypt_buttton.Location = new Point(22, 481);
+            Encrypt_buttton.Location = new Point(1020, 579);
             Encrypt_buttton.Name = "Encrypt_buttton";
             Encrypt_buttton.Size = new Size(329, 65);
             Encrypt_buttton.TabIndex = 13;
@@ -262,7 +268,7 @@
             // 
             Decrypt_button.BackColor = Color.Tomato;
             Decrypt_button.Font = new Font("Segoe UI", 25F);
-            Decrypt_button.Location = new Point(22, 559);
+            Decrypt_button.Location = new Point(1020, 657);
             Decrypt_button.Name = "Decrypt_button";
             Decrypt_button.Size = new Size(329, 65);
             Decrypt_button.TabIndex = 14;
@@ -345,7 +351,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(402, 430);
+            checkBox4.Location = new Point(298, 667);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(73, 19);
             checkBox4.TabIndex = 25;
@@ -355,7 +361,7 @@
             // checkBox5
             // 
             checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(402, 405);
+            checkBox5.Location = new Point(298, 642);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new Size(73, 19);
             checkBox5.TabIndex = 24;
@@ -365,7 +371,7 @@
             // checkBox6
             // 
             checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(402, 380);
+            checkBox6.Location = new Point(298, 617);
             checkBox6.Name = "checkBox6";
             checkBox6.Size = new Size(74, 19);
             checkBox6.TabIndex = 23;
@@ -1082,11 +1088,77 @@
             label64.Size = new Size(2, 32);
             label64.TabIndex = 91;
             // 
+            // checkBox7
+            // 
+            checkBox7.AutoSize = true;
+            checkBox7.Location = new Point(298, 430);
+            checkBox7.Name = "checkBox7";
+            checkBox7.Size = new Size(73, 19);
+            checkBox7.TabIndex = 100;
+            checkBox7.Text = "From file";
+            checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            checkBox8.AutoSize = true;
+            checkBox8.Location = new Point(298, 405);
+            checkBox8.Name = "checkBox8";
+            checkBox8.Size = new Size(73, 19);
+            checkBox8.TabIndex = 99;
+            checkBox8.Text = "Generate";
+            checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            checkBox9.AutoSize = true;
+            checkBox9.Location = new Point(298, 380);
+            checkBox9.Name = "checkBox9";
+            checkBox9.Size = new Size(74, 19);
+            checkBox9.TabIndex = 98;
+            checkBox9.Text = "By hands";
+            checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // checkBox10
+            // 
+            checkBox10.AutoSize = true;
+            checkBox10.Location = new Point(298, 542);
+            checkBox10.Name = "checkBox10";
+            checkBox10.Size = new Size(73, 19);
+            checkBox10.TabIndex = 103;
+            checkBox10.Text = "From file";
+            checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox11
+            // 
+            checkBox11.AutoSize = true;
+            checkBox11.Location = new Point(298, 517);
+            checkBox11.Name = "checkBox11";
+            checkBox11.Size = new Size(73, 19);
+            checkBox11.TabIndex = 102;
+            checkBox11.Text = "Generate";
+            checkBox11.UseVisualStyleBackColor = true;
+            // 
+            // checkBox12
+            // 
+            checkBox12.AutoSize = true;
+            checkBox12.Location = new Point(298, 492);
+            checkBox12.Name = "checkBox12";
+            checkBox12.Size = new Size(74, 19);
+            checkBox12.TabIndex = 101;
+            checkBox12.Text = "By hands";
+            checkBox12.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1382, 642);
+            ClientSize = new Size(1382, 732);
+            Controls.Add(checkBox10);
+            Controls.Add(checkBox11);
+            Controls.Add(checkBox12);
+            Controls.Add(checkBox7);
+            Controls.Add(checkBox8);
+            Controls.Add(checkBox9);
             Controls.Add(label58);
             Controls.Add(label59);
             Controls.Add(label60);
@@ -1288,5 +1360,11 @@
         private Label label62;
         private Label label63;
         private Label label64;
+        private CheckBox checkBox7;
+        private CheckBox checkBox8;
+        private CheckBox checkBox9;
+        private CheckBox checkBox10;
+        private CheckBox checkBox11;
+        private CheckBox checkBox12;
     }
 }

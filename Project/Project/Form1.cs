@@ -1,3 +1,4 @@
+using System;
 using System.Net.NetworkInformation;
 using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -228,26 +229,14 @@ namespace Project
 
         private int generateN1(int n, int m)
         {
-            // алгоритм Эвклида для нахождения обратного элемента
-            int t = 0, newT = 1;
-            int r = m, newR = n;
-
-            while (newR != 0)
+            for (int x = 1; x < m; x++)
             {
-                int quotient = r / newR;
-
-                int tempT = t;
-                t = newT;
-                newT = tempT - quotient * newT;
-
-                int tempR = r;
-                r = newR;
-                newR = tempR - quotient * newR;
+                if ((n * x) % m == 1)
+                {
+                    return x;
+                }
             }
-
-            t += m;
-
-            return t;
+            return -1;
         }
 
         static int NOD(int a, int b)
@@ -432,9 +421,86 @@ namespace Project
 
         private void Decrypt_button_Click(object sender, EventArgs e)
         {
-            
 
+            //M
+            m = Int32.Parse(M_field.Text);
 
+            //N
+            if (checkBox9.Checked)
+            {
+                n = Int32.Parse(N_field.Text);
+                if (!(IsPrime(n) && NOD(n, m) == 1))
+                {
+                    MessageBox.Show("N is not correct!");
+                    return;
+                }
+            }
+            else if (checkBox8.Checked)
+            {
+                Random random = new Random();
+                while (true)
+                {
+                    n = random.Next(2, 10000);
+
+                    if (IsPrime(n) && NOD(n, m) == 1)
+                    {
+                        break;
+                    }
+                }
+                N_field.Text = n.ToString();
+            }
+            else if (checkBox7.Checked)
+            {
+                n = Int32.Parse(File.ReadAllText("n.txt"));
+
+                if (!(IsPrime(n) && NOD(n, m) == 1))
+                {
+                    MessageBox.Show("N is not correct!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("U didnt choose any variant!");
+                return;
+            }
+
+            //N1
+            if (checkBox12.Checked)
+            {
+                n1 = Int32.Parse(N1_field.Text);
+                if (!CheckN1(n,n1,m))
+                {
+                    MessageBox.Show("N1 is not correct!");
+                    return;
+                }
+            }
+            else if (checkBox11.Checked)
+            {
+                n1 = generateN1(n,m);
+                N1_field.Text = n1.ToString();
+            }
+            else if (checkBox10.Checked)
+            {
+                n1 = Int32.Parse(File.ReadAllText("n1.txt"));
+
+                if (!CheckN1(n, n1, m))
+                {
+                    MessageBox.Show("N1 is not correct!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("U didnt choose any variant!");
+                return;
+            }
+
+        }
+
+        static bool CheckN1(int n, int nInv, int m)
+        {
+            return (n * nInv) % m == 1;
         }
     }
 }
