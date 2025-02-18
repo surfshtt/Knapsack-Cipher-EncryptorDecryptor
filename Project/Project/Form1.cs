@@ -43,10 +43,10 @@ namespace Project
                 if (!checkCorrectSequence(k_i))
                 {
                     MessageBox.Show("Incorrect sequence entered!");
-                    return;
+                    //return;
                 }
 
-                MessageBox.Show(k_i[0] + " " + k_i[1] + " " + k_i[2] + " " + k_i[3] + " " + k_i[4] + " " + k_i[5] + " " + k_i[6]);
+                //MessageBox.Show(k_i[0] + " " + k_i[1] + " " + k_i[2] + " " + k_i[3] + " " + k_i[4] + " " + k_i[5] + " " + k_i[6]);
             }
             else if (checkBox2.Checked)
             {
@@ -85,7 +85,7 @@ namespace Project
                 if (!checkCorrectSequence(k_i))
                 {
                     MessageBox.Show("Incorrect sequence entered!");
-                    return;
+                    //return;
                 }
 
                 MessageBox.Show(k_i[0] + " " + k_i[1] + " " + k_i[2] + " " + k_i[3] + " " + k_i[4] + " " + k_i[5] + " " + k_i[6]);
@@ -139,22 +139,45 @@ namespace Project
                 return;
             }
 
-            Random random = new Random();
 
-            while (true)
+            //N
+            if (checkBox7.Checked)
             {
-                n = random.Next(2, 10000);
-
-                if (IsPrime(n) && NOD(n, m) == 1)
-                {
-                    break;
-                }
+                n = Int32.Parse(File.ReadAllText("n.txt"));
+            }
+            else if (checkBox8.Checked)
+            {
+                n = generateN(m);
+            }
+            else if (checkBox9.Checked)
+            {
+                n = Int32.Parse(N_field.Text);
+            }
+            else
+            {
+                MessageBox.Show("U didnt choose any variant!");
+                return;
             }
 
-            n1 = generateN1(n, m);
+            //N1
+            if (checkBox10.Checked)
+            {
+                n1 = Int32.Parse(File.ReadAllText("n1.txt"));
+            }
+            else if (checkBox11.Checked)
+            {
+                n1 = generateN1(m,n);
+            }
+            else if (checkBox12.Checked)
+            {
+                n1 = Int32.Parse(N1_field.Text);
+            }
+            else
+            {
+                MessageBox.Show("U didnt choose any variant!");
+                return;
+            }
 
-            N_field.Text = n.ToString();
-            N1_field.Text = n1.ToString();
 
             for (int i = 0; i < 7; i++)
             {
@@ -232,14 +255,37 @@ namespace Project
 
         private int generateN1(int n, int m)
         {
-            for (int x = 1; x < m; x++)
+            for (int i = 0; i < m; i++)
             {
-                if ((n * x) % m == 1)
+                for (int j = 0; j < m; j++)
                 {
-                    return x;
+                    if ((i * j) % m == 1 && j == n)
+                    {
+                        N1_field.Text = i.ToString();
+                        return i;
+                    }
                 }
             }
+
             return -1;
+        }
+
+        private int generateN(int m)
+        {
+            Random random = new Random();
+            int tmpn = 0;
+            while (true)
+            {
+                tmpn = random.Next(2, 10000);
+
+                if (IsPrime(tmpn) && NOD(tmpn, m) == 1)
+                {
+                    break;
+                }
+            } 
+
+            N_field.Text = tmpn.ToString();
+            return tmpn;
         }
 
         static int NOD(int a, int b)
@@ -425,19 +471,35 @@ namespace Project
         private void Decrypt_button_Click(object sender, EventArgs e)
         {
             int[] c_i_toDecr = new int[7];
-            for (int i = 0; i < 7; i++)
+            string[] msgParts = Msg_to_encrypt.Text.Split(' ');
+
+            // Проверка длины массива
+            if (msgParts.Length < 7)
             {
-                c_i_toDecr[i] = Int32.Parse(Msg_to_encrypt.Text.Split(' ')[i]);
+                MessageBox.Show("Недостаточно элементов для расшифровки!");
+                return;
             }
 
-            //M
-            m = Int32.Parse(M_field.Text);
+            for (int i = 0; i < 7; i++)
+            {
+                if (!Int32.TryParse(msgParts[i], out c_i_toDecr[i]))
+                {
+                    MessageBox.Show($"Ошибка преобразования элемента {i + 1}!");
+                    return;
+                }
+            }
 
-            //N
+            // M
+            if (!Int32.TryParse(M_field.Text, out m))
+            {
+                MessageBox.Show("Ошибка преобразования M!");
+                return;
+            }
+
+            // N
             if (checkBox9.Checked)
             {
-                n = Int32.Parse(N_field.Text);
-                if (!(IsPrime(n) && NOD(n, m) == 1))
+                if (!Int32.TryParse(N_field.Text, out n) || !(IsPrime(n) && NOD(n, m) == 1))
                 {
                     MessageBox.Show("N is not correct!");
                     return;
@@ -445,20 +507,16 @@ namespace Project
             }
             else if (checkBox8.Checked)
             {
-                Random random = new Random();
-                while (true)
-                {
-                    n = random.Next(2, 10000);
-
-                    if (IsPrime(n) && NOD(n, m) == 1)
-                    {
-                        break;
-                    }
-                }
+                n = generateN(m);
                 N_field.Text = n.ToString();
             }
             else if (checkBox7.Checked)
             {
+                if (!File.Exists("n.txt"))
+                {
+                    MessageBox.Show("Файл n.txt не найден!");
+                    return;
+                }
                 n = Int32.Parse(File.ReadAllText("n.txt"));
 
                 if (!(IsPrime(n) && NOD(n, m) == 1))
@@ -469,27 +527,32 @@ namespace Project
             }
             else
             {
-                MessageBox.Show("U didnt choose any variant!");
+                MessageBox.Show("Вы не выбрали вариант для N!");
                 return;
             }
 
-            //N1
+            // N1
             if (checkBox12.Checked)
             {
-                n1 = Int32.Parse(N1_field.Text);
-                if (!CheckN1(n,n1,m))
+                if (!Int32.TryParse(N1_field.Text, out n1))
                 {
-                    MessageBox.Show("N1 is not correct!");
+                    MessageBox.Show("Ошибка преобразования N1!");
                     return;
                 }
+                // Здесь можно добавить проверку для N1, если она требуется
             }
             else if (checkBox11.Checked)
             {
-                n1 = generateN1(n,m);
+                n1 = generateN1(n, m);
                 N1_field.Text = n1.ToString();
             }
             else if (checkBox10.Checked)
             {
+                if (!File.Exists("n1.txt"))
+                {
+                    MessageBox.Show("Файл n1.txt не найден!");
+                    return;
+                }
                 n1 = Int32.Parse(File.ReadAllText("n1.txt"));
 
                 if (!CheckN1(n, n1, m))
@@ -500,40 +563,53 @@ namespace Project
             }
             else
             {
-                MessageBox.Show("U didnt choose any variant!");
+                MessageBox.Show("Вы не выбрали вариант для N1!");
                 return;
             }
 
-            //x_i
+            // x_i
             if (checkBox14.Checked)
             {
                 string[] tmp_x = Public_key.Text.Split(' ');
                 for (int i = 0; i < 7; i++)
                 {
-                    x_i[i] = Int32.Parse(tmp_x[i]);
+                    if (!Int32.TryParse(tmp_x[i], out x_i[i]))
+                    {
+                        MessageBox.Show($"Ошибка преобразования x_i[{i}]!");
+                        return;
+                    }
                 }
             }
             else if (checkBox13.Checked)
             {
+                if (!File.Exists("public_key.txt"))
+                {
+                    MessageBox.Show("Файл public_key.txt не найден!");
+                    return;
+                }
                 using (StreamReader sr = new StreamReader("public_key.txt"))
                 {
                     string public_key_str = sr.ReadLine();
-
                     Public_key.Text = public_key_str;
 
+                    string[] publicKeyParts = public_key_str.Split(' ');
                     for (int i = 0; i < 7; i++)
                     {
-                        x_i[i] = Int32.Parse(public_key_str.Split(' ')[i]);
+                        if (!Int32.TryParse(publicKeyParts[i], out x_i[i]))
+                        {
+                            MessageBox.Show($"Ошибка преобразования x_i[{i}] из файла!");
+                            return;
+                        }
                     }
                 }
             }
             else
             {
-                MessageBox.Show("U didnt choose any variant!");
+                MessageBox.Show("Вы не выбрали вариант для x_i!");
                 return;
             }
 
-
+            // Вывод значений
             int stLabel = 134;
             for (int i = 0; i < 7; i++)
             {
@@ -550,16 +626,18 @@ namespace Project
                 stLabel--;
             }
 
-            //15-57
-            int[] tmp_a_i = a_i;
-            stLabel = 15;
+            int[] tmp_a_i = (int[])a_i.Clone();
+            stLabel = 92;
             int globalI = 0, labelForBin = 71, labelForLet = 141;
-            for (stLabel = 92; stLabel >= 65; stLabel -= 7) {
+
+            for (stLabel = 92; stLabel >= 65; stLabel -= 7)
+            {
                 int[] bin_let = new int[7];
+
                 for (int i = 0; i < 7; i++)
                 {
-                    if (tmp_a_i[globalI] - x_i[i] >= 0) {
-                        Controls["label" + stLabel].Text = x_i.ToString();
+                    if (tmp_a_i[globalI] - x_i[i] >= 0)
+                    {
                         bin_let[i] = 1;
                         tmp_a_i[globalI] -= x_i[i];
                     }
@@ -567,29 +645,23 @@ namespace Project
                     {
                         bin_let[i] = 0;
                     }
-
-                    stLabel += 7;
                 }
                 globalI++;
 
-                for(int k = 0; k < 7; k++)
+                for (int k = 0; k < 7; k++)
                 {
                     Controls["label" + labelForBin].Text += bin_let[k].ToString();
                 }
                 labelForBin--;
 
-                for (int k = 0; k < 7; k++)
+                int decVal = 0;
+                for (int i = 0; i < 7; i++)
                 {
-                    int decVal = 0;
-                    for (int i = 0; i < 7; i++)
-                    {
-                        decVal += bin_let[i] * (1 << (7 - 1 - i));
-                    }
-
-                    byte[] byteArray = new byte[] { (byte)decVal };
-
-                    Controls["label" + labelForLet].Text = Encoding.GetEncoding(1251).GetString(byteArray); ;
+                    decVal += bin_let[i] * (1 << (6 - i)); // 6 - i из-за 7 бит
                 }
+
+                byte[] byteArray = new byte[] { (byte)decVal };
+                Controls["label" + labelForLet].Text = Encoding.GetEncoding(1251).GetString(byteArray);
                 labelForLet--;
             }
         }
