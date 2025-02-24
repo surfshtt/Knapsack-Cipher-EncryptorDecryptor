@@ -131,8 +131,6 @@
             checkBox10 = new CheckBox();
             checkBox11 = new CheckBox();
             checkBox12 = new CheckBox();
-            checkBox13 = new CheckBox();
-            checkBox14 = new CheckBox();
             label65 = new Label();
             label66 = new Label();
             label67 = new Label();
@@ -1229,26 +1227,6 @@
             checkBox12.Text = "By hands";
             checkBox12.UseVisualStyleBackColor = true;
             // 
-            // checkBox13
-            // 
-            checkBox13.AutoSize = true;
-            checkBox13.Location = new Point(401, 192);
-            checkBox13.Name = "checkBox13";
-            checkBox13.Size = new Size(73, 19);
-            checkBox13.TabIndex = 105;
-            checkBox13.Text = "From file";
-            checkBox13.UseVisualStyleBackColor = true;
-            // 
-            // checkBox14
-            // 
-            checkBox14.AutoSize = true;
-            checkBox14.Location = new Point(400, 167);
-            checkBox14.Name = "checkBox14";
-            checkBox14.Size = new Size(74, 19);
-            checkBox14.TabIndex = 104;
-            checkBox14.Text = "By hands";
-            checkBox14.UseVisualStyleBackColor = true;
-            // 
             // label65
             // 
             label65.AutoSize = true;
@@ -1324,7 +1302,7 @@
             label72.AutoSize = true;
             label72.BorderStyle = BorderStyle.FixedSingle;
             label72.Font = new Font("Segoe UI", 16F);
-            label72.Location = new Point(1178, 917);
+            label72.Location = new Point(1268, 917);
             label72.Name = "label72";
             label72.Size = new Size(2, 32);
             label72.TabIndex = 169;
@@ -1334,7 +1312,7 @@
             label73.AutoSize = true;
             label73.BorderStyle = BorderStyle.FixedSingle;
             label73.Font = new Font("Segoe UI", 16F);
-            label73.Location = new Point(1178, 881);
+            label73.Location = new Point(1268, 881);
             label73.Name = "label73";
             label73.Size = new Size(2, 32);
             label73.TabIndex = 168;
@@ -1344,7 +1322,7 @@
             label74.AutoSize = true;
             label74.BorderStyle = BorderStyle.FixedSingle;
             label74.Font = new Font("Segoe UI", 16F);
-            label74.Location = new Point(1178, 841);
+            label74.Location = new Point(1268, 841);
             label74.Name = "label74";
             label74.Size = new Size(2, 32);
             label74.TabIndex = 167;
@@ -1354,7 +1332,7 @@
             label75.AutoSize = true;
             label75.BorderStyle = BorderStyle.FixedSingle;
             label75.Font = new Font("Segoe UI", 16F);
-            label75.Location = new Point(1178, 805);
+            label75.Location = new Point(1268, 805);
             label75.Name = "label75";
             label75.Size = new Size(2, 32);
             label75.TabIndex = 166;
@@ -1364,7 +1342,7 @@
             label76.AutoSize = true;
             label76.BorderStyle = BorderStyle.FixedSingle;
             label76.Font = new Font("Segoe UI", 16F);
-            label76.Location = new Point(1178, 767);
+            label76.Location = new Point(1268, 767);
             label76.Name = "label76";
             label76.Size = new Size(2, 32);
             label76.TabIndex = 165;
@@ -1374,7 +1352,7 @@
             label77.AutoSize = true;
             label77.BorderStyle = BorderStyle.FixedSingle;
             label77.Font = new Font("Segoe UI", 16F);
-            label77.Location = new Point(1178, 727);
+            label77.Location = new Point(1268, 727);
             label77.Name = "label77";
             label77.Size = new Size(2, 32);
             label77.TabIndex = 164;
@@ -1384,7 +1362,7 @@
             label78.AutoSize = true;
             label78.BorderStyle = BorderStyle.FixedSingle;
             label78.Font = new Font("Segoe UI", 16F);
-            label78.Location = new Point(1178, 691);
+            label78.Location = new Point(1268, 691);
             label78.Name = "label78";
             label78.Size = new Size(2, 32);
             label78.TabIndex = 163;
@@ -1464,7 +1442,7 @@
             label86.AutoSize = true;
             label86.BorderStyle = BorderStyle.FixedSingle;
             label86.Font = new Font("Segoe UI", 16F);
-            label86.Location = new Point(1266, 917);
+            label86.Location = new Point(1177, 917);
             label86.Name = "label86";
             label86.Size = new Size(2, 32);
             label86.TabIndex = 155;
@@ -1474,7 +1452,7 @@
             label87.AutoSize = true;
             label87.BorderStyle = BorderStyle.FixedSingle;
             label87.Font = new Font("Segoe UI", 16F);
-            label87.Location = new Point(1266, 881);
+            label87.Location = new Point(1177, 881);
             label87.Name = "label87";
             label87.Size = new Size(2, 32);
             label87.TabIndex = 154;
@@ -1484,7 +1462,7 @@
             label88.AutoSize = true;
             label88.BorderStyle = BorderStyle.FixedSingle;
             label88.Font = new Font("Segoe UI", 16F);
-            label88.Location = new Point(1266, 841);
+            label88.Location = new Point(1177, 841);
             label88.Name = "label88";
             label88.Size = new Size(2, 32);
             label88.TabIndex = 153;
@@ -1494,7 +1472,7 @@
             label89.AutoSize = true;
             label89.BorderStyle = BorderStyle.FixedSingle;
             label89.Font = new Font("Segoe UI", 16F);
-            label89.Location = new Point(1266, 805);
+            label89.Location = new Point(1177, 805);
             label89.Name = "label89";
             label89.Size = new Size(2, 32);
             label89.TabIndex = 152;
@@ -1504,7 +1482,7 @@
             label90.AutoSize = true;
             label90.BorderStyle = BorderStyle.FixedSingle;
             label90.Font = new Font("Segoe UI", 16F);
-            label90.Location = new Point(1266, 767);
+            label90.Location = new Point(1177, 767);
             label90.Name = "label90";
             label90.Size = new Size(2, 32);
             label90.TabIndex = 151;
@@ -1514,7 +1492,7 @@
             label91.AutoSize = true;
             label91.BorderStyle = BorderStyle.FixedSingle;
             label91.Font = new Font("Segoe UI", 16F);
-            label91.Location = new Point(1266, 727);
+            label91.Location = new Point(1177, 727);
             label91.Name = "label91";
             label91.Size = new Size(2, 32);
             label91.TabIndex = 150;
@@ -1524,7 +1502,7 @@
             label92.AutoSize = true;
             label92.BorderStyle = BorderStyle.FixedSingle;
             label92.Font = new Font("Segoe UI", 16F);
-            label92.Location = new Point(1266, 691);
+            label92.Location = new Point(1177, 691);
             label92.Name = "label92";
             label92.Size = new Size(2, 32);
             label92.TabIndex = 149;
@@ -2112,8 +2090,6 @@
             Controls.Add(label133);
             Controls.Add(label134);
             Controls.Add(pictureBox2);
-            Controls.Add(checkBox13);
-            Controls.Add(checkBox14);
             Controls.Add(checkBox10);
             Controls.Add(checkBox11);
             Controls.Add(checkBox12);
@@ -2328,8 +2304,6 @@
         private CheckBox checkBox10;
         private CheckBox checkBox11;
         private CheckBox checkBox12;
-        private CheckBox checkBox13;
-        private CheckBox checkBox14;
         private Label label65;
         private Label label66;
         private Label label67;

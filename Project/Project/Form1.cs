@@ -51,19 +51,15 @@ namespace Project
             else if (checkBox2.Checked)
             {
                 k_i[0] = Int32.Parse(Private_key.Text);
-
+                List<int> privateKey = new List<int> { k_i[0] };
                 Random rand = new Random();
-                int tmpGen = rand.Next(k_i[0], k_i[0] + 100);
 
                 for (int i = 1; i < 7; i++)
                 {
-                    while (sumOfPrevious(k_i, i) > tmpGen)
-                    {
-                        tmpGen = rand.Next();
-                    }
-
-                    k_i[i] = tmpGen;
-                    tmpGen = rand.Next();
+                    int sum = privateKey.Sum();
+                    int nextNumber = rand.Next(sum + 1, sum * 3);
+                    privateKey.Add(nextNumber);
+                    k_i[i] = nextNumber;
                 }
 
                 Private_key.Text += " ";
@@ -98,7 +94,7 @@ namespace Project
 
 
             //M
-            if (checkBox4.Checked)
+            if (checkBox6.Checked)
             {
                 if (sumOfPrivateKeyEl() < Int32.Parse(M_field.Text))
                 {
@@ -114,14 +110,11 @@ namespace Project
             {
                 Random rand = new Random();
 
-                if ((int)sumOfPrivateKeyEl() + 1 > 0)
-                    m = rand.Next((int)sumOfPrivateKeyEl() + 1, Int32.MaxValue);
-                else
-                    m = rand.Next(((int)sumOfPrivateKeyEl() + 1) * -1, Int32.MaxValue);
+                m = rand.Next((int)sumOfPrivateKeyEl() + 1, (int)sumOfPrivateKeyEl()*3);
 
                 M_field.Text = m.ToString();
             }
-            else if (checkBox6.Checked)
+            else if (checkBox4.Checked)
             {
                 if (Int32.Parse(File.ReadAllText("m.txt")) > sumOfPrivateKeyEl())
                 {
@@ -139,22 +132,30 @@ namespace Project
                 return;
             }
 
-            Random random = new Random();
-
-            while (true)
+            if (N1_field.Text == "")
             {
-                n = random.Next(2, 10000);
+                Random random = new Random();
 
-                if (IsPrime(n) && NOD(n, m) == 1)
+                while (true)
                 {
-                    break;
+                    n = random.Next(2, m);
+
+                    if (IsPrime(n) && NOD(n, m) == 1)
+                    {
+                        break;
+                    }
                 }
+
+                n1 = generateN1(n, m);
+
+                N_field.Text = n.ToString();
+                N1_field.Text = n1.ToString();
             }
-
-            n1 = generateN1(n, m);
-
-            N_field.Text = n.ToString();
-            N1_field.Text = n1.ToString();
+            else
+            {
+                n = Int32.Parse(N_field.Text);
+                n1 = Int32.Parse(N1_field.Text);
+            }
 
             for (int i = 0; i < 7; i++)
             {
@@ -221,8 +222,9 @@ namespace Project
             stLabel = 64;
             for (int i = 0; i < 7; i++)
             {
-                Controls["label" + stLabel].Text = (sumsOfCol[i] % m).ToString();
                 c_i[i] = sumsOfCol[i] % m;
+
+                Controls["label" + stLabel].Text = c_i[i].ToString();
                 Encrypted_message.Text += c_i[i].ToString() + " ";
                 stLabel--;
             }
@@ -232,14 +234,29 @@ namespace Project
 
         private int generateN1(int n, int m)
         {
-            for (int x = 1; x < m; x++)
+            int m0 = m, t, q;
+            int x0 = 0, x1 = 1;
+
+            if (m == 1)
+                return 0;
+
+            while (n > 1)
             {
-                if ((n * x) % m == 1)
-                {
-                    return x;
-                }
+                q = n / m;
+                t = m;
+
+                m = n % m;
+                n = t;
+                t = x0;
+
+                x0 = x1 - q * x0;
+                x1 = t;
             }
-            return -1;
+
+            if (x1 < 0)
+                x1 += m0;
+
+            return x1;
         }
 
         static int NOD(int a, int b)
@@ -274,6 +291,14 @@ namespace Project
             }
 
             return binaryArray;
+        }
+
+        private char fromBin(int[] binaryArray)
+        {
+            string binaryString = string.Join("", binaryArray);
+            byte byteValue = Convert.ToByte(binaryString, 2);
+            char symbol = Encoding.GetEncoding("windows-1251").GetChars(new byte[] { byteValue })[0];
+            return symbol;
         }
 
         private long sumOfPrivateKeyEl()
@@ -477,7 +502,7 @@ namespace Project
             if (checkBox12.Checked)
             {
                 n1 = Int32.Parse(N1_field.Text);
-                if (!CheckN1(n,n1,m))
+                if (!CheckN1(n, n1, m))
                 {
                     MessageBox.Show("N1 is not correct!");
                     return;
@@ -505,33 +530,13 @@ namespace Project
             }
 
             //x_i
-            if (checkBox14.Checked)
+           
+            string[] tmp_x = Public_key.Text.Split(' ');
+            for (int i = 0; i < 7; i++)
             {
-                string[] tmp_x = Public_key.Text.Split(' ');
-                for (int i = 0; i < 7; i++)
-                {
-                    x_i[i] = Int32.Parse(tmp_x[i]);
-                }
+                x_i[i] = Int32.Parse(tmp_x[i]);
             }
-            else if (checkBox13.Checked)
-            {
-                using (StreamReader sr = new StreamReader("public_key.txt"))
-                {
-                    string public_key_str = sr.ReadLine();
-
-                    Public_key.Text = public_key_str;
-
-                    for (int i = 0; i < 7; i++)
-                    {
-                        x_i[i] = Int32.Parse(public_key_str.Split(' ')[i]);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("U didnt choose any variant!");
-                return;
-            }
+              
 
 
             int stLabel = 134;
@@ -550,48 +555,112 @@ namespace Project
                 stLabel--;
             }
 
-            //15-57
+            //120 - 92 строчка
+            //120 - 114 столбик
+            int stLabelStr = 120;
+            int stLabelStlb = 120;
+            int labelForBin = 71;
+            int labelForLet = 141;
             int[] tmp_a_i = a_i;
-            stLabel = 15;
-            int globalI = 0, labelForBin = 71, labelForLet = 141;
-            for (stLabel = 92; stLabel >= 65; stLabel -= 7) {
-                int[] bin_let = new int[7];
-                for (int i = 0; i < 7; i++)
+            int[] bin_let = new int[7];
+            for (int i = 0; i < 7; i++)
+            {
+                stLabelStr = stLabelStlb;
+                for (int j = 6; j >= 0; j--)
                 {
-                    if (tmp_a_i[globalI] - x_i[i] >= 0) {
-                        Controls["label" + stLabel].Text = x_i.ToString();
-                        bin_let[i] = 1;
-                        tmp_a_i[globalI] -= x_i[i];
+                    if (tmp_a_i[i] - k_i[j] >= 0)
+                    {
+                        Controls["label" + stLabelStr].Text = k_i[j].ToString();
+                        bin_let[j] = 1;
+                        tmp_a_i[i] -= k_i[j];
                     }
                     else
                     {
-                        bin_let[i] = 0;
+                        bin_let[j] = 0;
                     }
-
-                    stLabel += 7;
+                    stLabelStr -= 7;
                 }
-                globalI++;
-
-                for(int k = 0; k < 7; k++)
-                {
-                    Controls["label" + labelForBin].Text += bin_let[k].ToString();
-                }
-                labelForBin--;
 
                 for (int k = 0; k < 7; k++)
                 {
-                    int decVal = 0;
-                    for (int i = 0; i < 7; i++)
-                    {
-                        decVal += bin_let[i] * (1 << (7 - 1 - i));
-                    }
-
-                    byte[] byteArray = new byte[] { (byte)decVal };
-
-                    Controls["label" + labelForLet].Text = Encoding.GetEncoding(1251).GetString(byteArray); ;
+                    Controls["label" + labelForBin].Text += bin_let[k].ToString();
                 }
+
+
+                Controls["label" + labelForLet].Text = fromBin(bin_let).ToString();
+
                 labelForLet--;
+                labelForBin--;
+                stLabelStlb--;
             }
+
+            //int labelForBin = 71;
+            //for (int i = 0; i < 7; i++)
+            //{
+            //    Controls["label" + labelForBin].Text += bin_let[i].ToString();
+            //    labelForBin--;
+            //}
+
+
+            //byte[] byteArray;
+
+            //int decVal = 0;
+            //for (int k = 0; k < 7; k++)
+            //{
+            //    decVal += bin_let[k] * (1 << (7 - 1 - k));
+            //}
+
+            //byteArray = new byte[] { (byte)decVal };
+            //int labelForLet = 141;
+            //for (int i = 0; i < 7; i++)
+            //{
+            //    Controls["label" + labelForLet].Text = Encoding.GetEncoding(1251).GetString(byteArray[i]);
+            //    labelForLet--;
+            //}
+            
+
+            //15-57
+            //int[] tmp_a_i = a_i;
+            //stLabel = 15;
+            //int globalI = 0, labelForBin = 71, labelForLet = 141;
+            //for (stLabel = 92; stLabel >= 65; stLabel -= 7) {
+            //    int[] bin_let = new int[8];
+            //    for (int i = 0; i < 7; i++)
+            //    {
+            //        if (tmp_a_i[globalI] - x_i[i] >= 0) {
+            //            Controls["label" + stLabel].Text = x_i[i].ToString();
+            //            bin_let[i] = 1;
+            //            tmp_a_i[globalI] -= x_i[i];
+            //        }
+            //        else
+            //        {
+            //            bin_let[i] = 0;
+            //        }
+
+            //        stLabel += 7;
+            //    }
+            //    globalI++;
+
+            //    for(int k = 0; k < 7; k++)
+            //    {
+            //        Controls["label" + labelForBin].Text += bin_let[k].ToString();
+            //    }
+            //    labelForBin--;
+
+            //    for (int k = 0; k < 7; k++)
+            //    {
+            //        int decVal = 0;
+            //        for (int i = 0; i < 7; i++)
+            //        {
+            //            decVal += bin_let[i] * (1 << (7 - 1 - i));
+            //        }
+
+            //        byte[] byteArray = new byte[] { (byte)decVal };
+
+            //        Controls["label" + labelForLet].Text = Encoding.GetEncoding(1251).GetString(byteArray); ;
+            //    }
+            //    labelForLet--;
+            //}
         }
 
         static bool CheckN1(int n, int nInv, int m)
