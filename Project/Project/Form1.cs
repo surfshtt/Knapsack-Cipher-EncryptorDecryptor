@@ -63,7 +63,7 @@ namespace Project
                 }
 
                 Private_key.Text += " ";
-                for (int i = 0; i < 7; i++)
+                for (int i = 1; i < 7; i++)
                 {
                     Private_key.Text += k_i[i] + " ";
                 }
